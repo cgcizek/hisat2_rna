@@ -5,7 +5,7 @@ def align_reads(read1_path, read2_path, reference_genome_index, output_bam):
 
     # Align reads using hisat2
     hisat2_cmd = [
-        'hisat2',
+        'path/to/hisat2',
         '-x', reference_genome_index,
         '-1', read1_path,
         '-2', read2_path,
@@ -22,7 +22,7 @@ def align_reads(read1_path, read2_path, reference_genome_index, output_bam):
     # Convert SAM to sorted BAM using samtools
     bam_output = output_bam.replace('.bam', '')  # Remove .bam extension
     samtools_sort_cmd = [
-        'samtools', 'sort',
+        'path/to/samtools', 'sort',
         '-o', output_bam,
         '-O', 'BAM',
         sam_output
